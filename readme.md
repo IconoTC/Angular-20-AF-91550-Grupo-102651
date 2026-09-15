@@ -102,7 +102,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 ## Desarrollo del curso
 
-### Día 1 (L-13): Introducción Angular. CLI. Componentes. Testing. 
+### Día 1 (L-21): Introducción Angular. CLI. Componentes. Testing. 
 
 <!-- - Introducción a Angular y su ecosistema.
 
@@ -175,7 +175,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - Renderizado del componente (e.g. heading).
   - Coverage. Instalación v-8 -->
 
-### Día 2 (M-14): Componentes del Layout. 
+### Día 2 (M-22): Componentes del Layout. 
 
 <!-- - Componente 🧿CourseItemPro. 
   - Eventos
@@ -230,7 +230,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 -->
 
 
-### Día 3 (X-15). Paginas. Comunicaciones entre Componentes. Rutas, Servicios 
+### Día 3 (X-23). Paginas. Comunicaciones entre Componentes. Rutas, Servicios 
 
 <!-- - Scaffolding. Features
   - Componentes (pages): 🧿Home, 🧿Dashboard, 🧿About (Angular).
@@ -280,7 +280,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - environments de Angular
   - Uso de tokens de inyección -->
 
-### Día 4 (J-16). Pipes y directivas. Formularios TD, DD, SD
+### Día 4 (J-24). Pipes y directivas. Formularios TD, DD, SD
 
 <!-- - Test del servicio Logger. Casos de uso 
 - 🧿Logger-Demo. Usos del servicio Logger
@@ -346,7 +346,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Uso de model en esta situación 
 -->
 
-### Día 5 (V-17).  Arquitectura. Servicios repo (HTTP) y state 
+### Día 5 (V-25).  Arquitectura. Servicios repo (HTTP) y state 
  
 <!-- - Arquitectura de componentes
   - Componentes de contenedores vs de presentación.
