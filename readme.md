@@ -104,7 +104,9 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 ### Día 1 (L-21): Introducción Angular. CLI. Componentes. Testing. 
 
-<!-- - Introducción a Angular y su ecosistema.
+- Presentación del curso, del instructor y de los alumnos.
+
+- Introducción a Angular y su ecosistema.
 
 - Entornos de desarrollo para Angular: 
   - Node: nvm (Node Version Manager)
@@ -118,17 +120,20 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Estructura de un workspace/proyecto Angular.
   - Creación de un workspace+proyecto desde Vitest. `npm create vitest@latest`
 
+[descanso]: 11:20 - 11:45
+
+
+
 - Angular CLI: Comandos básicos (1).
   - Servidor de desarrollo: `ng serve`.
   - Construcción del proyecto: `ng build`.
-
-[descanso]: 11:30 - 12:00
 
 - Angular CLI: Comandos básicos (2).
   - Testing con Vitest: `ng test`.
   - Testing con Playwright: `ng e2e`
   - Despliegue: `ng deploy`. Opciones
 
+<!-- 
 - Generación de componentes: `ng generate`.
   - Elementos de un componente: HTML, CSS, TypeScript. 
   - Template y estilos inline o en ficheros.
@@ -166,6 +171,8 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
         - Detección del cambio: Zone v. Zoneless
         - Detección del cambio: Estrategia OnPush
    -->
+
+[comida]: 14:00 - 15:00
 
 <!-- - Testing de componentes. Pruebas unitarias
   - Test con Vitest. Conceptos básicos y ejemplo
