@@ -3,9 +3,10 @@ import { RouterOutlet } from '@angular/router';
 import { Sample } from '../sample/sample';
 import { CourseItem } from '../../../features/courses/components/course-item/course-item';
 import { CourseItemSignals } from '../../../features/courses/components/course-item-signals/course-item-signals';
+import { CourseItemPro } from '../../../features/courses/components/course-item-pro/course-item-pro';
 
 @Component({
-  imports: [RouterOutlet, Sample, CourseItem, CourseItemSignals],
+  imports: [RouterOutlet, Sample, CourseItem, CourseItemSignals, CourseItemPro],
   selector: 'ind-root',
   styles: [],
   template: `
@@ -14,6 +15,7 @@ import { CourseItemSignals } from '../../../features/courses/components/course-i
     <ind-sample />
     <ind-course-item />
     <ind-course-item-signals />
+    <ind-course-item-pro />
     <router-outlet />
   `,
 })
