@@ -2,9 +2,11 @@ import { Component, signal } from '@angular/core';
 import { User } from '../user/user';
 import { Separator } from '../separator/separator';
 import { Toggle } from '../toggle/toggle';
+import { Search } from '../search/search';
+import { SearchRef } from '../search-ref/search-ref';
 
 @Component({
-  imports: [User, Separator, Toggle],
+  imports: [User, Separator, Toggle, Search, SearchRef],
   selector: 'ind-header',
   styles: `
     :host {
@@ -97,11 +99,14 @@ import { Toggle } from '../toggle/toggle';
         <p class="first-line">{{ subtitle() }}</p>
         <div class="second-line">
           <ng-content select="[slot='menu']"></ng-content>
-          <div>Search</div>
+          <div>
+            <ind-search />
+            <ind-search-ref />
+          </div>
         </div>
       </div>
     </header>
-   <ind-separator />
+    <ind-separator />
   `,
 })
 export class Header {

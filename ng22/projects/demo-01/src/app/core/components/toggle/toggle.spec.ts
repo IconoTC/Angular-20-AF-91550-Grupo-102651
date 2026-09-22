@@ -10,13 +10,6 @@ describe('Toggle', () => {
   let elementSpanDark: HTMLSpanElement;
   let elementInput: HTMLInputElement;
 
-  beforeEach(() => {
-    elementSpanLight = fixture.nativeElement.querySelector('span[aria-label="Light Theme"]');
-    elementSpanDark = fixture.nativeElement.querySelector('span[aria-label="Dark Theme"]');
-    const debugElementInput = fixture.debugElement.query(By.css('input'));
-    elementInput = debugElementInput.nativeElement as HTMLInputElement;
-  });
-
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Toggle],
@@ -25,6 +18,14 @@ describe('Toggle', () => {
     fixture = TestBed.createComponent(Toggle);
     component = fixture.componentInstance;
     await fixture.whenStable();
+  });
+
+  beforeEach(() => {
+    const spans = fixture.nativeElement.querySelectorAll('span');
+    elementSpanLight = spans[0];
+    elementSpanDark = spans[1];
+    const debugElementInput = fixture.debugElement.query(By.css('input'));
+    elementInput = debugElementInput.nativeElement as HTMLInputElement;
   });
 
   it('should create', () => {
