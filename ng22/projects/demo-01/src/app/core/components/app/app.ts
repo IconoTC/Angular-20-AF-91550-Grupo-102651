@@ -6,9 +6,23 @@ import { CourseItemSignals } from '../../../features/courses/components/course-i
 import { CourseItemPro } from '../../../features/courses/components/course-item-pro/course-item-pro';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
+import { Card } from '../card/card';
+import { LogoCoders } from '../logo-coders/logo-coders';
+import { Menu } from '../menu/menu';
 
 @Component({
-  imports: [RouterOutlet, Header, Footer, Sample, CourseItem, CourseItemSignals, CourseItemPro],
+  imports: [
+    RouterOutlet,
+    Header,
+    LogoCoders,
+    Menu,
+    Footer,
+    Card,
+    Sample,
+    CourseItem,
+    CourseItemSignals,
+    CourseItemPro,
+  ],
   selector: 'ind-root',
   styles: `
     :host {
@@ -33,12 +47,20 @@ import { Footer } from '../footer/footer';
   `,
   template: `
     <ind-header>
-      <!-- aquí irá <alc-menu /> -->
+      <ind-logo-coders slot="left" />
+      <ind-menu slot="menu" />
     </ind-header>
     <main class="container">
       <router-outlet />
-      <p>Páginas de la aplicación</p>
-      <ind-course-item-pro />
+
+      <ind-card>
+        <p>Páginas de la aplicación</p>
+      </ind-card>
+
+      <ind-card>
+        <ind-course-item-pro />
+      </ind-card>
+
       <details>
         <summary>Ejemplo de componente</summary>
         <ind-sample />

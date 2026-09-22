@@ -1,7 +1,10 @@
 import { Component, signal } from '@angular/core';
+import { User } from '../user/user';
+import { Separator } from '../separator/separator';
+import { Toggle } from '../toggle/toggle';
 
 @Component({
-  imports: [],
+  imports: [User, Separator, Toggle],
   selector: 'ind-header',
   styles: `
     :host {
@@ -76,24 +79,29 @@ import { Component, signal } from '@angular/core';
   `,
   template: `
     <header class="container">
-      <div class="left-side">Slot: Logo Global</div>
+      <div class="left-side">
+        <ng-content select="[slot='left']"></ng-content>
+      </div>
       <hgroup>
-        Logo de Angular
         <h1>{{ title() }}</h1>
       </hgroup>
       <div class="right-side">
-        <div class="user-icons">User Icons</div>
-        <div class="system-icons">System Icons (Toggle)</div>
+        <div class="user-icons">
+          <ind-user />
+        </div>
+        <div class="system-icons">
+          <ind-toggle />
+        </div>
       </div>
       <div class="bottom-row">
         <p class="first-line">{{ subtitle() }}</p>
         <div class="second-line">
-          <div>Slot: Menu</div>
+          <ng-content select="[slot='menu']"></ng-content>
           <div>Search</div>
         </div>
       </div>
     </header>
-    <div>------Separador</div>
+   <ind-separator />
   `,
 })
 export class Header {
