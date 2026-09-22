@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { App } from './app';
+import { By } from '@angular/platform-browser';
+import { Footer } from '../footer/footer';
 
 describe('App', () => {
   let component: App;
@@ -19,16 +21,15 @@ describe('App', () => {
     expect(component).toBeTruthy();
   });
 
-  //Test de implementación
-  //Caja blanca
-  it('should have as title "Demo-01"', () => {
-    expect(component['title']()).toEqual('Demo-01');
+  it('should render the header', () => {
+    const element = fixture.nativeElement as HTMLElement;
+    expect(element.querySelector('ind-header')).toBeTruthy();
   });
 
-  // Test de comportamiento
-  // Test de caja negra
-  it('should render title', async () => {
-    const element = fixture.nativeElement as HTMLElement;
-    expect(element.querySelector('h1')?.textContent).toContain('Demo-01');
+  it('should render the footer', () => {
+    const debugElement = fixture.debugElement;
+    const footerElement  = debugElement.query(By.directive(Footer));
+    expect(footerElement).toBeTruthy();
+    expect(footerElement.componentInstance).toBeInstanceOf(Footer);
   });
 });
