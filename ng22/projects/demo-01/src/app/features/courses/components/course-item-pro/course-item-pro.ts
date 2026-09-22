@@ -1,6 +1,6 @@
 import { Component, computed, signal } from '@angular/core';
-import { COURSES } from '../../../data/courses';
-import { Course } from '../../../types/course';
+import { COURSES } from '../../data/courses';
+import { Course } from '../../types/course';
 
 const STAT_MIN = 0;
 const STAT_MAX = 10;

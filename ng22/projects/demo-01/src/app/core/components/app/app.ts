@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Sample } from '../sample/sample';
-import { CourseItem } from '../../../features/courses/components/course-item/course-item';
-import { CourseItemSignals } from '../../../features/courses/components/course-item-signals/course-item-signals';
-import { CourseItemPro } from '../../../features/courses/components/course-item-pro/course-item-pro';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
-import { Card } from '../card/card';
 import { LogoCoders } from '../logo-coders/logo-coders';
 import { Menu } from '../menu/menu';
+import AboutPage from '../../../features/about/about-page';
+import CoursesPage from '../../../features/courses/courses-page';
+import DashboardPage from '../../../features/dashboard/dashboard-page';
+import HomePage from '../../../features/home/home-page';
+import { Card } from '../card/card';
 
 @Component({
   imports: [
@@ -17,11 +17,11 @@ import { Menu } from '../menu/menu';
     LogoCoders,
     Menu,
     Footer,
+    HomePage,
+    DashboardPage,
+    CoursesPage,
+    AboutPage,
     Card,
-    Sample,
-    CourseItem,
-    CourseItemSignals,
-    CourseItemPro,
   ],
   selector: 'ind-root',
   styles: `
@@ -52,24 +52,18 @@ import { Menu } from '../menu/menu';
     </ind-header>
     <main class="container">
       <router-outlet />
-
       <ind-card>
-        <p>Páginas de la aplicación</p>
+        <ind-home-page />
       </ind-card>
-
       <ind-card>
-        <ind-course-item-pro />
+        <ind-dashboard-page />
       </ind-card>
-
-      <details>
-        <summary>Ejemplo de componente</summary>
-        <ind-sample />
-      </details>
-      <details>
-        <summary>Otras versiones de course item</summary>
-        <ind-course-item />
-        <ind-course-item-signals />
-      </details>
+      <ind-card>
+        <ind-courses-page />
+      </ind-card>
+      <ind-card>
+        <ind-about-page />
+      </ind-card>
     </main>
     <ind-footer />
   `,
