@@ -1,23 +1,25 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import AboutPage from './about-page';
-import { TimeService } from '../../core/services/time';
+import { Info } from './info';
+import { TimeService } from '../../../../core/services/time';
 
 const timeServiceMock = {
   getTime: vi.fn().mockReturnValue(1234567890),
 };
 
-describe('AboutPage', () => {
-  let component: AboutPage;
-  let fixture: ComponentFixture<AboutPage>;
+
+describe('Info', () => {
+  let component: Info;
+  let fixture: ComponentFixture<Info>;
   let service: TimeService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AboutPage],
-      providers: [{ provide: TimeService, useValue: timeServiceMock }],
+      imports: [Info],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AboutPage);
+    TestBed.overrideProvider(TimeService, { useValue: timeServiceMock });
+
+    fixture = TestBed.createComponent(Info);
     component = fixture.componentInstance;
     service = TestBed.inject(TimeService);
     await fixture.whenStable();

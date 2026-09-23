@@ -1,5 +1,6 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 import { Counter } from '../counter/counter';
+import { TimeService } from '../../../../core/services/time';
 
 export interface CounterState {
   id: number;
@@ -8,7 +9,7 @@ export interface CounterState {
 }
 
 const initialState: CounterState[] = [
-  { id: 102, value: 1 , clicks: 0 },
+  { id: 102, value: 1, clicks: 0 },
   { id: 105, value: 0, clicks: 0 },
   { id: 134, value: 0, clicks: 0 },
 ];
@@ -29,15 +30,19 @@ const initialState: CounterState[] = [
     <p>Total Clicks: {{ totalClicks() }}</p>
     <div>
       @for (counter of counters(); track counter.id) {
-        <ind-counter [counter]="counter"
-        (counterChange)="changeCounter($event)" />
+        <ind-counter [counter]="counter" (counterChange)="changeCounter($event)" />
       }
+    </div>
+    <div class="timeStamp">
+      {{ timeService.getTime() }}
     </div>
   `,
 })
 export class CountersList {
+  protected readonly timeService = inject(TimeService);
+
   protected readonly counters = signal<CounterState[]>(initialState);
- 
+
   protected readonly total = computed(() => {
     return this.counters().reduce((acc, counter) => acc + counter.value, 0);
   });

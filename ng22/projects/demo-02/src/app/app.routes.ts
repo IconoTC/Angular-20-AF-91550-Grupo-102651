@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { MenuOption } from './core/types/menu-option';
+import { TimeService } from './core/services/time';
 
 export const routes: Routes = [
   {
@@ -21,7 +22,8 @@ export const routes: Routes = [
     title: 'Dashboard | Demo 02',
     data: {
       label: 'Dashboard',
-    }
+    },
+    providers: [TimeService]
   },
   {
     path: 'courses',
