@@ -1,0 +1,5 @@
+export const environment = {
+  production: false,
+  apiUrl: 'https://localhost:8000',
+  loggerLevel: 2, // Nivel de log para el servicio Logger (0: debug, 1: info, 2: warn, 3: error)
+};
