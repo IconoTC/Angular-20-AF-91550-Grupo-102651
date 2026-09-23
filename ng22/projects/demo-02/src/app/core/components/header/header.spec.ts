@@ -12,6 +12,10 @@ describe('Header', () => {
 
     fixture = TestBed.createComponent(Header);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('app-title', 'Curso Test');
+    fixture.componentRef.setInput('subtitle', 'Aprende a desarrollar aplicaciones con Angular');
+    fixture.detectChanges();
+
     await fixture.whenStable();
   });
 
@@ -22,7 +26,7 @@ describe('Header', () => {
   //Test de implementación
   //Caja blanca
   it('should have as title "Curso de Angular 22"', () => {
-    expect(component['title']()).toContain('Angular 22');
+    expect(component['title']()).toContain('Curso');
     expect(component['subtitle']()).toContain('Aprende a desarrollar aplicaciones con Angular');
   });
 
@@ -30,7 +34,7 @@ describe('Header', () => {
   // Test de caja negra
   it('should render title', async () => {
     const element = fixture.nativeElement as HTMLElement;
-    expect(element.querySelector('h1')?.textContent).toContain('Angular 22');
+    expect(element.querySelector('h1')?.textContent).toContain('Curso');
     expect(element.querySelector('p')?.textContent).toContain('Aprende a desarrollar aplicaciones con Angular');
   });
 });

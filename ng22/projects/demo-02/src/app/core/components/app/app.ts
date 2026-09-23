@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
@@ -9,6 +9,7 @@ import CoursesPage from '../../../features/courses/courses-page';
 import DashboardPage from '../../../features/dashboard/dashboard-page';
 import HomePage from '../../../features/home/home-page';
 import { Card } from '../card/card';
+import { MENU_OPTIONS } from '../../../app.routes';
 
 @Component({
   imports: [
@@ -46,9 +47,9 @@ import { Card } from '../card/card';
     }
   `,
   template: `
-    <ind-header>
+    <ind-header [app-title]="title()" [subtitle]="subtitle()">
       <ind-logo-coders slot="left" />
-      <ind-menu slot="menu" />
+      <ind-menu slot="menu" [options]="menuOptions()" />
     </ind-header>
     <main class="container">
       <router-outlet />
@@ -69,5 +70,7 @@ import { Card } from '../card/card';
   `,
 })
 export class App {
-  //protected readonly title = signal('Demo-01');
+  protected readonly title = signal('Curso de Angular 22');
+  protected readonly subtitle = signal('Aprende a desarrollar aplicaciones con Angular');
+  protected readonly menuOptions = signal(MENU_OPTIONS);
 }

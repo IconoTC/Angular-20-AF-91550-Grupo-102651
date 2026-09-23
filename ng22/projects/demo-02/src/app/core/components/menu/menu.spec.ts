@@ -1,6 +1,14 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Menu } from './menu';
 import { By } from '@angular/platform-browser';
+import { MenuOption } from '../../types/menu-option';
+
+const mockMenuOptions: MenuOption[] = [
+  { label: 'Inicio', path: '/' },
+  { label: 'Dashboard', path: '/dashboard' },
+  { label: 'Cursos', path: '/cursos' },
+  { label: 'Acerca de', path: '/acerca-de' }
+];
 
 describe('Menu', () => {
   let component: Menu;
@@ -13,6 +21,7 @@ describe('Menu', () => {
 
     fixture = TestBed.createComponent(Menu);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('options', mockMenuOptions);
     await fixture.whenStable();
   });
 
@@ -26,6 +35,8 @@ describe('Menu', () => {
       const itemElement: HTMLLIElement = fixture.debugElement.queryAll(By.css('li'))[index]
         .nativeElement;
       expect(itemElement.textContent).toContain(option.label);
+      const linkElement: HTMLAnchorElement = itemElement.querySelector('a')!;
+      expect(linkElement.getAttribute('href')).toBe(option.path);
     });
   });
 });

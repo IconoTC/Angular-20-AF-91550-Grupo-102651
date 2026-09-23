@@ -1,4 +1,5 @@
-import { Component, signal } from '@angular/core';
+/* eslint-disable @angular-eslint/no-input-rename */
+import { Component, input } from '@angular/core';
 import { User } from '../user/user';
 import { Separator } from '../separator/separator';
 import { Toggle } from '../toggle/toggle';
@@ -107,6 +108,12 @@ import { Search } from '../search/search';
   `,
 })
 export class Header {
-  protected readonly title = signal('Curso de Angular 22');
-  protected readonly subtitle = signal('Aprende a desarrollar aplicaciones con Angular');
+  // protected readonly title = signal('Curso de Angular 22');
+  
+ title = input.required<string>({
+    alias: 'app-title',
+    //transform: (value: string) =>{ return value.toUpperCase()}
+  })
+  readonly subtitle = input.required<string>();
+
 }
