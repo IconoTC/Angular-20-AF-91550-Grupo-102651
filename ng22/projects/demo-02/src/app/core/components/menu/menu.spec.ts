@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Menu } from './menu';
 import { By } from '@angular/platform-browser';
 import { MenuOption } from '../../types/menu-option';
+import { provideRouter } from '@angular/router';
 
 const mockMenuOptions: MenuOption[] = [
   { label: 'Inicio', path: '/' },
@@ -17,6 +18,7 @@ describe('Menu', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [Menu],
+      providers: [provideRouter([])], // Proporciona un enrutador vacío para las pruebas
     }).compileComponents();
 
     fixture = TestBed.createComponent(Menu);

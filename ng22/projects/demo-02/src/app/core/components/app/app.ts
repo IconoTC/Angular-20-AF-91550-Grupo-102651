@@ -4,26 +4,12 @@ import { Header } from '../header/header';
 import { Footer } from '../footer/footer';
 import { LogoCoders } from '../logo-coders/logo-coders';
 import { Menu } from '../menu/menu';
-import AboutPage from '../../../features/about/about-page';
-import CoursesPage from '../../../features/courses/courses-page';
-import DashboardPage from '../../../features/dashboard/dashboard-page';
-import HomePage from '../../../features/home/home-page';
+
 import { Card } from '../card/card';
 import { MENU_OPTIONS } from '../../../app.routes';
 
 @Component({
-  imports: [
-    RouterOutlet,
-    Header,
-    LogoCoders,
-    Menu,
-    Footer,
-    HomePage,
-    DashboardPage,
-    CoursesPage,
-    AboutPage,
-    Card,
-  ],
+  imports: [RouterOutlet, Header, LogoCoders, Menu, Footer, Card],
   selector: 'ind-root',
   styles: `
     :host {
@@ -52,8 +38,10 @@ import { MENU_OPTIONS } from '../../../app.routes';
       <ind-menu slot="menu" [options]="menuOptions()" />
     </ind-header>
     <main class="container">
-      <router-outlet />
       <ind-card>
+        <router-outlet />
+      </ind-card>
+      <!-- <ind-card>
         <ind-home-page />
       </ind-card>
       <ind-card>
@@ -64,7 +52,7 @@ import { MENU_OPTIONS } from '../../../app.routes';
       </ind-card>
       <ind-card>
         <ind-about-page />
-      </ind-card>
+      </ind-card> -->
     </main>
     <ind-footer />
   `,
