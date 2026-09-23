@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { TimeService } from '../../../../core/services/time';
+import { Logger } from '../../../../core/services/logger';
 
 @Component({
   imports: [],
@@ -54,6 +55,9 @@ export class Info {
   protected readonly currentDate = signal(new Date().toLocaleDateString());
 
   protected readonly timeService = inject(TimeService); // nueva forma de hacerlo
+
+  protected readonly logger = inject(Logger)
+
 
   // forma antigua de hacerlo
   // constructor(protected timeService: TimeService) {}
