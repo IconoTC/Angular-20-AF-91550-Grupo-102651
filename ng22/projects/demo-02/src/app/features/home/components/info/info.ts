@@ -1,9 +1,11 @@
 import { Component, inject, signal } from '@angular/core';
 import { TimeService } from '../../../../core/services/time';
 import { Logger } from '../../../../core/services/logger';
+import { DatePipe, TitleCasePipe } from '@angular/common';
+import { TruncatePipe } from '../../../../core/pipes/truncate-pipe';
 
 @Component({
-  imports: [],
+  imports: [DatePipe, TitleCasePipe, TruncatePipe],
   selector: 'ind-info',
   providers: [
    TimeService
@@ -34,6 +36,7 @@ import { Logger } from '../../../../core/services/logger';
   template: `
     <h3>Información del proyecto</h3>
     <p>Este proyecto es un ejemplo de uso de Angular 22 y sus nuevas características.</p>
+    <p>{{sample() | truncate : 40}}</p>
     <ul>
       <li>Angular 22</li>
       <li>TypeScript 6.0</li>
@@ -42,7 +45,7 @@ import { Logger } from '../../../../core/services/logger';
     <footer>
       <ul>
         <li>Autor: {{ author() }}</li>
-        <li>Fecha: {{ currentDate() }}</li>
+        <li>Fecha: {{ currentDate() | date : 'fullDate' | titlecase }}</li>
       </ul>
     </footer>
     <div class="timeStamp">
@@ -52,11 +55,13 @@ import { Logger } from '../../../../core/services/logger';
 })
 export class Info {
   protected readonly author = signal('Alejandro Cerezo');
-  protected readonly currentDate = signal(new Date().toLocaleDateString());
+  protected readonly currentDate = signal(new Date());
 
   protected readonly timeService = inject(TimeService); // nueva forma de hacerlo
 
   protected readonly logger = inject(Logger)
+
+  protected sample = signal('Ejemplo de truncate: Este proyecto también incluye algunas características nuevas de Angular 22.')
 
 
   // forma antigua de hacerlo
