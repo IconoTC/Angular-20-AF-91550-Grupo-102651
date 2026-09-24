@@ -339,7 +339,6 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 - [Descanso] - 11:30 - 12:00
 
-<!-- 
 
   - Rutas anidadas. 
     - Login y Register
@@ -347,21 +346,24 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Rutas con parámetros
     - LoginPage. Parámetros y formularios posibles
       (tdf, mdf-rx, signals)
-    - RegisterPage. Parámetros y formularios posibles
-      (monolithic, custom)
     - @if / @switch
+
+<!-- COMENTADO
+ 
   - Selección del formulario: 🧿Componente sidebar. 
     - linkedSignals. Comunicación entre componentes
     - respuesta a la navegación. router.events.subscribe()
+-->
 
-----------------
-
-- 🧿Componente LoginFormTdf: Forms Template Driven (TD)
+- 🧿Componente LoginFormTd: Forms Template Driven (TD)
     - NgForm implícito, NgModel. Referencias locales
     - Paso de ngForm al onSubmit: form.value; form.reset()
     - Validaciones 
 
-- 🧿Componente LoginFormMdfRx: Formularios reactivos (DD). LoginForm
+- [comida] 14:00 - 15:00
+
+
+- 🧿Componente LoginFormMdRx: Formularios reactivos (DD). LoginForm
   - FormGroup, FormControl, FormBuilder
   - Binding desde el template [formGroup] y (ngSubmit)
   - Validaciones síncronas (y asíncronas).
@@ -371,11 +373,14 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Model (signal), FieldTree, FieldState 
   - Binding desde el template  [formField] y (submit)
   - Schema de validación
+  - Directiva FormRoot y submit
 
+<!--
 - RegisterForm. Otros controles HTML (comentado)
+-->
 
 - Custom controls
-  -  🧿Componente Input -->
+  -  🧿Componente Input 
 
 <!-- NO INCLUIDO -->
 <!-- - Testing de formularios reactivos. -->
