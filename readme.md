@@ -223,7 +223,6 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 [comida]: 14:00 - 15:00
 
-
 - Componente 🧿Search. Input de usuario: 2 way data binding. [(ngModel)]
 - Referencias locales. #ref
   - Signal queries: viewChild, focus()
@@ -231,12 +230,12 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Effects (primitiva de signal) 
 
 - Componente 🧿SearchRef. Referencias locales en el template.  
-  - Test de Search. Renderizado y data binding
+- Test de Search. Renderizado y data binding
 
 - Nuevo proyecto (app): demo-02.  `ng g app demo-02 --style css --ssr false -p ind -t -s`  
 
 - Scaffolding. Features
-  - Componentes (pages): 🧿Home, 🧿Dashboard, 🧿About (Angular).
+  - Componentes (pages): 🧿Home, 🧿Dashboard, 🧿Courses, 🧿About (Angular).
   - Test de las páginas
 
 - Eliminamos componentes innecesarios
@@ -249,10 +248,8 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - 🧿Componentes incluidos en la demo de Angular
 -->
 
-
 ### Día 3 (X-23). Paginas. Comunicaciones entre Componentes. Rutas, Servicios 
 
-<!-- 
 - Comunicación entre componentes (1)
   - Input. Decoradores @Input. función input(). Drilling
 
@@ -260,48 +257,67 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Componente 🧿Counter. Estado y eventos (click)
   - Refactor Componente Counter. Condicionales @If. [class}
 
-- Testing de todos los componentes
+- Testing de todos los componentes (comentado)
   - Test de Counter. Eventos. Errores al testar implementación
 
-- Comunicación entre componentes (2)  
-  - Output. Decorador @Output. EventEmitter. Función output(). Eventos del contador
+- Comunicación entre componentes (2) 
   - 🧿CounterList. Agrupando contadores. Estado en el componente padre
-  - Contadores. Eventos con valor.  
   - Input en los contadores. Revision de los totales
-  - Computed signals 
-  - Test de inputs y outputs. 
-
-- linkedSignals (1)
-  - sincronización de diversas "fuentes" de cambio
-  - 🧿Filter-options. selectedOption como linkedSignal
+    - input() y linkedSignal
+    - sincronización de diversas "fuentes" de cambio
+  - Output. Decorador @Output. EventEmitter. Función output(). Eventos del contador
+    - Contadores. Eventos con valor 
 
 [Descanso]: 11:30 - 12:00
 
-- linkedSignals (2)
+  - Respuesta a los eventos. Estado en el componente padre (contenedor/controlador).
+  - Computed signals 
+  - Test de inputs y outputs. 
+
+<!-- SOLO COMENTADO 
+- model()
+- linkedSignals (otro caso de uso)
+  - 🧿Filter-options. selectedOption como linkedSignal
   - 🧿Filter. Comunicación entre componentes con linkedSignals
-  
+
+-->
+
 - Rutas básicas. `app.routes.ts`
   - Array de rutas.
-  - Array de opciones de menu
   - RouterOutlet en AppComponent.
   - Navegación. Componente menu. @for
   - SPA: RouterLink y RouterLinkActive
+
+[comida]: 14:00 - 15:00
+
+- Rutas básicas. `app.routes.ts` (continuación)
+  - Array de opciones de menu
 - Rutas Lazy. Default import en las páginas
+- Test las paginas (componentes) con rutas. RouterTestingHarness
 
 - 🧿Info. Componente para probar servicios...
 - Introducción a los servicios en Angular.
+
 - Servicios y Providers. DI (Dependency Injection)
   - Provider root v. provider en un componente / ruta
-  - Ejemplo con un servicio simple: Time
+  - Ejemplo con un servicio simple: TimeService
   - Injector jerárquico. Servicios singleton y no singleton.  
+
+  - Test del servicio TimeService
+  - Test de componentes con servicios (mocks y spies).
+    - Modificación del provider en el TestBed. `providers: [ { provide: TimeService, useValue: mockTimeService } ]`
+    - Modificación del provider en el componente. `TestBed.overrideProvider()`
+
 - Servicio Logger. 
   - environments de Angular
-  - Uso de tokens de inyección -->
+  - Uso de tokens de inyección 
 
 ### Día 4 (J-24). Pipes y directivas. Formularios TD, DD, SD
 
-<!-- - Test del servicio Logger. Casos de uso 
-- 🧿Logger-Demo. Usos del servicio Logger
+<!-- 
+- Servicio Logger (final). 
+  - Test del servicio Logger. Casos de uso 
+  - 🧿Logger-Demo. Usos del servicio Logger
 
 - Pipes
   - DatePipe. Location "es". 
