@@ -314,7 +314,6 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 ### Día 4 (J-24). Pipes y directivas. Formularios TD, DD, SD
 
-<!-- 
 - Servicio Logger (final). 
   - Test del servicio Logger. Casos de uso 
   - 🧿Logger-Demo. Usos del servicio Logger
@@ -324,7 +323,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Usar por defecto: inyección de dependencias
   - Pipes propios. Ejemplo: Pipe de `truncate`
 
-- Directivas. Estructurales y de atributo  -->
+- Directivas. Estructurales y de atributo  
 
 <!-- Solo comentado 
 - Directivas propias
@@ -333,7 +332,15 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - Directivas estructurales: Role (ngIf)
 -->
 
-<!-- - Feature Auth
+- Feature Auth
+  
+  - Servicio Auth. Login simulado con Observables y con Promesas.
+  - Test del servicio Auth. Casos de uso
+
+- [Descanso] - 11:30 - 12:00
+
+<!-- 
+
   - Rutas anidadas. 
     - Login y Register
     - Fichero de rutas propio de Auth. `auth.routes.ts`
@@ -347,7 +354,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - linkedSignals. Comunicación entre componentes
     - respuesta a la navegación. router.events.subscribe()
 
-- [Descanso] - 11:30 - 12:00
+----------------
 
 - 🧿Componente LoginFormTdf: Forms Template Driven (TD)
     - NgForm implícito, NgModel. Referencias locales
