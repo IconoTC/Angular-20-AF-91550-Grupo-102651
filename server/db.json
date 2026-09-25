@@ -20,7 +20,7 @@
       "description": "Este es un curso de React 18",
       "duration": "30 horas",
       "level": "beginner",
-      "isOfficial": false,
+      "isOfficial": true,
       "image": "/assets/course_react.webp",
       "courseStats": {
         "utility": 6,

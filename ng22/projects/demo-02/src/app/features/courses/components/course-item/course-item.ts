@@ -1,5 +1,6 @@
-import { Component, input, output } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Course } from '../../types/course';
+import { CoursesStore } from '../../services/courses.store';
 
 @Component({
   imports: [],
@@ -30,28 +31,26 @@ import { Course } from '../../types/course';
     <h2 [title]="'ID: ' + course().id">{{ course().title.toUpperCase() }}</h2>
     <p>{{ course().description }}</p>
     <label>
-      <input type="checkbox" [checked]="course().isOfficial" (change)="handleChangeEmit()" />
+      <input type="checkbox" [checked]="course().isOfficial" (change)="handleChange()" />
       <span>Curso Oficial</span>
     </label>
-    <button (click)="handleDeleteEmit()">Eliminar</button>
+    <button (click)="handleDelete()">Eliminar</button>
     <img [src]="course().image" [alt]="course().title" />
   `,
 })
 export class CourseItem {
   readonly course = input.required<Course>();
+  readonly store = inject(CoursesStore)
 
-  protected readonly changeEvent = output<Course>();
-  protected readonly deleteEvent = output<Course>();
-
-  handleChangeEmit() {
+  handleChange() {
     const updatedCourse: Course = {
       ...this.course(),
       isOfficial: !this.course().isOfficial,
     };
-    this.changeEvent.emit(updatedCourse);
+    this.store.updateCourse(updatedCourse);
   }
 
-  handleDeleteEmit() {
-    this.deleteEvent.emit(this.course());
+  handleDelete() {
+    this.store.deleteCourse(this.course());
   }
 }

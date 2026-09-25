@@ -1,7 +1,8 @@
-import { Component, input, output, signal } from '@angular/core';
+import { Component, inject, input, output, signal } from '@angular/core';
 import { Course } from '../../types/course';
 import { form, FormField } from '@angular/forms/signals';
 import { Input } from '../../../../core/design/input/input';
+import { CoursesStore } from '../../services/courses.store';
 
 @Component({
   selector: 'ind-course-form',
@@ -79,7 +80,10 @@ import { Input } from '../../../../core/design/input/input';
   `,
 })
 export class CourseForm {
-  readonly eventCreate = output<Omit<Course, 'id'>>();
+
+  readonly store = inject(CoursesStore)
+
+  readonly eventCreate = output<void>();
   readonly #courseInitialState: Omit<Course, 'id'> = {
     title: '',
     description: 'Añadir la descripción',
@@ -100,8 +104,9 @@ export class CourseForm {
   protected readonly courseForm = form(this.#courseModel);
 
   protected emitCreate(event: Event) {
-    event.preventDefault();
-    this.eventCreate.emit(this.courseForm().value());
+    event.preventDefault()
+    this.store.addCourse(this.courseForm().value())
+    this.eventCreate.emit();
     this.#courseModel.set(this.#courseInitialState);
   }
 }
