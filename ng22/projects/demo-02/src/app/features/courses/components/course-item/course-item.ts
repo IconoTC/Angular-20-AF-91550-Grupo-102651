@@ -1,10 +1,9 @@
-import { Component, signal, ViewEncapsulation } from '@angular/core';
-import { COURSES } from '../../data/courses';
+import { Component, input, output } from '@angular/core';
+import { Course } from '../../types/course';
 
 @Component({
   imports: [],
   selector: 'ind-course-item',
-  encapsulation: ViewEncapsulation.Emulated,
   styles: `
     :host {
       display: flex;
@@ -15,6 +14,7 @@ import { COURSES } from '../../data/courses';
       padding: 1rem;
       border: 1px solid var(--color-primary);
       border-radius: 4px;
+      max-width: 200px;
     }
     p {
       text-align: center;
@@ -29,9 +29,29 @@ import { COURSES } from '../../data/courses';
   template: `
     <h2 [title]="'ID: ' + course().id">{{ course().title.toUpperCase() }}</h2>
     <p>{{ course().description }}</p>
+    <label>
+      <input type="checkbox" [checked]="course().isOfficial" (change)="handleChangeEmit()" />
+      <span>Curso Oficial</span>
+    </label>
+    <button (click)="handleDeleteEmit()">Eliminar</button>
     <img [src]="course().image" [alt]="course().title" />
   `,
 })
 export class CourseItem {
-  protected readonly course = signal(COURSES[0]);
+  readonly course = input.required<Course>();
+
+  protected readonly changeEvent = output<Course>();
+  protected readonly deleteEvent = output<Course>();
+
+  handleChangeEmit() {
+    const updatedCourse: Course = {
+      ...this.course(),
+      isOfficial: !this.course().isOfficial,
+    };
+    this.changeEvent.emit(updatedCourse);
+  }
+
+  handleDeleteEmit() {
+    this.deleteEvent.emit(this.course());
+  }
 }
