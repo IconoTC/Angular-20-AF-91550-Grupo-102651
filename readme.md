@@ -345,7 +345,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - Fichero de rutas propio de Auth. `auth.routes.ts`
   - Rutas con parámetros
     - LoginPage. Parámetros y formularios posibles
-      (tdf, mdf-rx, signals)
+      (td, md-rx, signals)
     - @if / @switch
 
 <!-- COMENTADO
@@ -362,10 +362,9 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 - [comida] 14:00 - 15:00
 
-
 - 🧿Componente LoginFormMdRx: Formularios reactivos (DD). LoginForm
   - FormGroup, FormControl, FormBuilder
-  - Binding desde el template [formGroup] y (ngSubmit)
+  - Binding desde el template [formGroup] formControlName y (ngSubmit)
   - Validaciones síncronas (y asíncronas).
     - Mensajes de validación 
 
@@ -380,7 +379,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 -->
 
 - Custom controls
-  -  🧿Componente Input 
+  -  🧿Componente Input. [FormValueControl] 
 
 <!-- NO INCLUIDO -->
 <!-- - Testing de formularios reactivos. -->
