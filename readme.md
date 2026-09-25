@@ -393,7 +393,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
 
 ### Día 5 (V-25).  Arquitectura. Servicios repo (HTTP) y state 
  
-<!-- - Arquitectura de componentes
+- Arquitectura de componentes
   - Componentes de contenedores vs de presentación.
   - Componentes inteligentes vs tontos.
 
@@ -412,6 +412,10 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Los mismos repositorios usando RxJS (Observables). 
   - Uso del repo en el componente -->
 
+- API server fake basado en JSONServer.
+
+- [Descanso] 11:30 - 12:00
+
 <!--  No incluido
 - Testing de servicios.
   - Tests del servicio
@@ -419,15 +423,15 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - Test de promesas (async, whenStable, expectAsync).
   - Testing de componentes con servicios (mocks y spies). -->
 
-<!-- - API server fake basado en JSONServer.
+- API server fake basado en JSONServer.
   - Prueba con Postman
 
-- [Descanso] 11:00 - 11:30
-
-- Nuevo proyecto (demo-02). 
-
 - Uso de environments. 
-  - Configuración de la URL base del API.
+
+<!-- 
+- Nuevo proyecto (demo-02).
+--> 
+
 
 - Introducción a los servicios HTTP en Angular.
 - Servicio HttpClient. Observables (RxJs).
@@ -439,7 +443,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Repositorio y lógica de negocio (estado). Estrategias 
   - Métodos CRUD. getAll() y getById()
   - Métodos CRUD. add(), update(), delete()
-  - Uso en los componentes. Inyección de dependencias. -->
+  - Uso en los componentes. Inyección de dependencias.
 
 <!-- NO INCLUIDO
   - Tests de servicios HTTP real (sin mock) 
@@ -447,7 +451,7 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
   - Test de componentes con servicios HTTP (mocks y spies).
 -->
  
-<!-- - Servicios stateful: patrón Flux. Feature Courses
+- Servicios stateful: patrón Flux. Feature Courses
 
   - Estado con Signals: signal (WriteableSignal) y readOnly/computed (Signal)
   
@@ -457,7 +461,9 @@ Curso de Angular 22, versión publicada el 3 de Junio de 2026.
     - Métodos para modificar el estado (add, toggle, remove)
     - Uso del estado desde los componentes ToDo...
 
-  - Uso desde cualquier parte de la aplicación (Header)  -->
+<!-- 
+  - Uso desde cualquier parte de la aplicación (Header)  
+-->
 
 <!-- Mencionado
   - Estado con RxJS: Subjects
